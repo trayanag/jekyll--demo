@@ -19,8 +19,20 @@
     {% if page.title %}
     <header>
         <h2> {{page.title}}</h2>
+        <p>{{site.description}}</p>
+        <nav>
+            <ul>
+                {% for page in site.pages %}
+                {% if page.title %}
+                <li><a href="{{ page.url }}">{{page.title}}</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
     </header>
     {% endif %}
+    
 {{content}}
 
 </main>
