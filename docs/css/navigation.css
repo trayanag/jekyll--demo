@@ -1,0 +1,91 @@
+nav.main {
+	align-self: center;
+}
+
+nav.main ul {
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+	margin: 0;
+}
+
+nav.main ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: -0.5rem;
+	width: 10rem;
+}
+nav li a:before{
+display: block;
+margin-right: 0.5em;
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+}
+nav li.page-title-about a:before{
+
+	content: '\f47f';
+	
+	}
+	nav li.page-title-home a:before{
+
+		content: '\f015';
+		
+		}
+
+.nav a {
+display: flex;
+padding: 0.5em 1em;
+background: blanchedalmond;
+color: black;
+text-decoration: none;
+}
+.nav a:hoover{
+	background: green;
+	color: white;
+}
+nav.main ul ul ul {
+	top: -0.5rem; right: 100%;
+	left: inherit;
+}
+
+nav.main ul li {
+	display: block;
+	list-style: none outside;
+	position: relative;
+
+}
+
+nav.main > ul > li > ul li:not(:last-child) {
+	padding-bottom: 0.5rem;
+}
+
+nav.main > ul > li {
+	padding: 0 0.5rem 0 0;
+}
+
+
+
+
+
+
+#main-nav-toggle,
+#toggle {
+	display: none;
+}
+
+#toggle {
+	position: relative;
+	flex: 1 0 100%;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+#toggle:before {
+	display: block;
+	content: '';
+	position: relative;
+	padding-right: 0.3rem;
+	font-weight: bold;
+}

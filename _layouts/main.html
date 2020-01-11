@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
     <title>CSS Advanced</title>
 </head>
 <body>
@@ -12,26 +13,36 @@
 <div class="site">
     
 <header class="site-header">
-<h1 class="site-heading">{{site.title}}</h1>
+    <div class="site-branding">
+
+        <h2> {{page.title}}</h2>
+        <p>{{site.description}}</p>
+
+    </div>
+
+
+  <!-- <h1 class="site-heading">{{site.title}}</h1> -->
+
+
+
+   
+    <nav class="nav">
+        <ul>
+            {% for page in site.pages %}
+            {% if page.title %}
+            <li class="page-title-{{page.title | slugify}}"><a href="{{ page.url }}">{{page.title}}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+
+
 </header>
 
 <main class="site-main">
-    {% if page.title %}
-    <header>
-        <h2> {{page.title}}</h2>
-        <p>{{site.description}}</p>
-        <nav>
-            <ul>
-                {% for page in site.pages %}
-                {% if page.title %}
-                <li><a href="{{ page.url }}">{{page.title}}</a>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </header>
-    {% endif %}
+   
     
 {{content}}
 

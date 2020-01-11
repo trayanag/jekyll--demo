@@ -1,0 +1,114 @@
+html {
+	font-size: var(--font-size, 18px);
+	line-height: var(--font-line-height,1.5);
+	font-family: var(--font-family-main, 'Verdana, san-serif')
+}
+
+
+body,form,input,textarea,option,select,button{
+	font:inherit
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.2rem; }
+
+h1,h2,h3,h4,h5,h6 {
+	padding-bottom: 0.5rem;
+	padding-top: 1.5rem;
+    font-weight: normal;
+}
+p,ul,ol {
+
+	padding-bottom: var(--layout-padding-b, 1.5em);
+}
+
+
+
+ul, ol {
+
+	margin-left: 1.5rem;
+}
+
+/* ul li, ol li {
+	list-style-position: inside;
+	background-color: lightcyan;
+} */
+
+ul ul {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+/* ul li { list-style-type: square; }
+ul ul li { list-style-type: disc; }
+ul ul ul li { list-style-type: circle; } */
+
+blockquote {
+	padding: 1rem 2rem;
+	border-left: 2px solid black;
+	font-family: "Georgia", serif;
+	margin-bottom: var(--layout-padding-b, 1.5em);
+	
+}
+blockquote p {
+	font-style: italic;
+}
+blockquote .author {
+	text-align: right;
+}
+
+table {
+	width: 100%;
+	table-layout: fixed;
+	margin-bottom: 1.5rem;
+	border: 1px solid #CCC;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table td, table th {
+	border: 1px solid #CCC;
+	padding: 0.3rem 0.5rem;
+}
+
+table thead th {
+	text-align: left;
+	background: #CCC;
+}
+
+table tr:nth-child(odd) td {
+	background: #F1F1F1;
+}
+
+table tr:hover td {
+	background: black;
+	color: #FFF;
+	border-color: transparent;
+}
+
+hr {
+	margin: 2rem 0;
+}
+
+img[class^="align-"] {
+	padding: 0.5rem;
+	background: #FFF;
+	border: 3px solid #222;
+	box-shadow: 0 0 5rem 0.1rem rgba(0,0,0,0.25);
+}
+
+.align-left {
+	float: left;
+	margin: 0 1.5rem 1rem 0;
+}
+
+.align-right {
+	float: right;
+	margin: 0 0 1rem 1.5rem;
+}
+
+
