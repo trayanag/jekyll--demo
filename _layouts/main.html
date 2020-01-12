@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,50 +9,54 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
     <title>CSS Advanced</title>
 </head>
+
 <body>
-    
-<div class="site">
-    
-<header class="site-header">
-    <div class="site-branding">
 
-        <h2> {{page.title}}</h2>
-        <p>{{site.description}}</p>
+    <div class="site">
 
+        <header class="site-header">
+            <div class="site-branding">
+
+                <h1> <a href="{{ site.baseurl }}">{{site.title}}</a></h1>
+                <p>{{site.description}}</p>
+
+            </div>
+
+
+            <!-- <h1 class="site-heading">{{site.title}}</h1> -->
+
+
+
+
+            <nav class="nav">
+                <ul>
+                    {% for page in site.pages %}
+                    {% if page.title %}
+                    <li class="page-title-{{page.title | slugify}}"><a
+                            href="{{site.baseurl}}{{ page.url }}">{{page.title}}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+
+
+        </header>
+
+        <main class="site-main">
+
+            <h2>{{page.title}}</h2>
+
+            {{content}}
+
+        </main>
+
+        <footer class="site-footer">
+            <p>All rights reserved &copy; 2019 - {{site.facebook_username}}</p>
+        </footer>
     </div>
 
-
-  <!-- <h1 class="site-heading">{{site.title}}</h1> -->
-
-
-
-   
-    <nav class="nav">
-        <ul>
-            {% for page in site.pages %}
-            {% if page.title %}
-            <li class="page-title-{{page.title | slugify}}"><a href="{{ page.url }}">{{page.title}}</a>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-
-
-
-</header>
-
-<main class="site-main">
-   
-    
-{{content}}
-
-</main>
-
-<footer class="site-footer">
-<p>All rights reserved &copy; 2019 - {{site.facebook_username}}</p>
-</footer>
-</div>
-
 </body>
+
 </html>
